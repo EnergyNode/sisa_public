@@ -1,0 +1,1 @@
+`SISA` has a builtin feature to communicate with external third-party software like `PSCAD` for the Impedance Scan function. `PSCAD` can only be installed on Windows, and thus `SISA` can only be used on Windows.
