@@ -1,0 +1,1026 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../impedance_scan/">
+      
+      
+        <link rel="next" href="../user_page/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    
+    
+      
+        <title>Stability Analysis - SISA Knowledge Base</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#steps" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SISA Knowledge Base" class="md-header__button md-logo" aria-label="SISA Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SISA Knowledge Base
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Stability Analysis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SISA Knowledge Base" class="md-nav__button md-logo" aria-label="SISA Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    SISA Knowledge Base
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    How to Use
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            How to Use
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Download
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../impedance_scan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Impedance Scan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Stability Analysis
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Stability Analysis
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Partition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequency-scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frequency Scan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frequency Scan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frequency-scan-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frequency Scan File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#h-config-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      H Config File
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sisa-stability-analysis-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      SISA Stability Analysis Page
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SISA Stability Analysis Page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-without-adjust" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run without Adjust
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate-participagion-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculate Participagion Factor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-with-adjust" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run with Adjust
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Page
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feedback/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feedback
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Physics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Physics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../physics/impedance_scan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Impedance Scan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../physics/stability_analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stability Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Partition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequency-scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frequency Scan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frequency Scan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frequency-scan-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frequency Scan File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#h-config-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      H Config File
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sisa-stability-analysis-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      SISA Stability Analysis Page
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SISA Stability Analysis Page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-without-adjust" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run without Adjust
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate-participagion-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculate Participagion Factor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-with-adjust" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run with Adjust
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Stability Analysis</h1>
+
+<p>The <code>Stability Analysis</code> page allows the user to perform stability analysis based on the frequency-spectra of impedances, which are essentially CSV-files. These files can be generated by the <code>Impedance Scan</code> function of this tool, or by any other simulation software, or by actual measurements.</p>
+<p>Here is focused on <em>how to use</em>. Please refer the publication [<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>] for detailed domain-knowledge.</p>
+<h2 id="steps">Steps</h2>
+<p>You can follow these steps to use this tool.</p>
+<ol>
+<li>System Partition: split the system into 2 subsystems: <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>.</li>
+<li>
+<p>Frequency scan: map the multi-input multi-output (MIMO) of all the connection ports between subsystem <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>, i.e. <span class="arithmatex">\(H_a\)</span> and <span class="arithmatex">\(H_b\)</span> respectively.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can use different ways to obtain the frequency scan CSV files:</p>
+<ul>
+<li>the <code>Impedance Scan</code> function of this tool,</li>
+<li>or by any other simulation software,</li>
+<li>or by actual measurements.</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Use the <code>Stability Analysis</code> feature of <code>SISA</code>.</p>
+</li>
+</ol>
+<h2 id="system-partition">System Partition</h2>
+<!-- TODO: check if subsystem B cannot contain active components.-->
+<p>The first step you need is to split the whole system into 2 subsystems. According to the Right Half Plane (RHP) pole-free partition rule the subsystem <span class="arithmatex">\(A\)</span> has all the active components, and the subsystem <span class="arithmatex">\(B\)</span> contains only the passive components. </p>
+<h2 id="frequency-scan">Frequency Scan</h2>
+<p>The aim is to get the transfer-function matrices <span class="arithmatex">\(H_a\)</span> and <span class="arithmatex">\(H_b\)</span> in frequency-domain. It is usually very difficult to directly obtain them. A common practice is to run a frequency scan for each port in a subsystem resulting one CSV file per port per subsystem. And then, use these files as building blocks to construct <span class="arithmatex">\(H_a\)</span> and <span class="arithmatex">\(H_b\)</span>. This is the way adopted by <code>SISA</code>.</p>
+<h3 id="frequency-scan-file">Frequency Scan File</h3>
+<p>A frequency scan file is a CSV file. The file name follows this convention <code>&lt;ZorY&gt;_xxx.csv</code>. The first character must be the letter <code>Z</code> or <code>Y</code>. The choice depends on the nature of the frequency-scan, use <code>Z</code> for impedance and <code>Y</code> for admittance. The second character must be an underscore <code>_</code>. The rest characters are left to the user's discretion. The file extension must be <code>.csv</code>.</p>
+<p>The file content is comma separated tabular data. The impedance or admittance is represented in the <span class="arithmatex">\(d\)</span>-<span class="arithmatex">\(q\)</span> system over different frequencies. Thus, the impedance or admittance at each frequency is a 2-by-2 matrix of complex values, indicated by an underline <code>_</code>. See the matrix below where <span class="arithmatex">\(\underline{X}\)</span> represents <span class="arithmatex">\(\underline{Z}\)</span> or <span class="arithmatex">\(\underline{Y}\)</span>.</p>
+<div class="arithmatex">\[
+\left[\begin{array}{cc}
+    \underline{X}_{dd} &amp; \underline{X}_{dq} \\
+    \underline{X}_{qd} &amp; \underline{X}_{qq} \\
+\end{array}\right]
+\]</div>
+<p>The data in the file starts directly from the first row, thus no column headers are allowed. The column sequence is:</p>
+<table>
+<thead>
+<tr>
+<th>frequencies</th>
+<th>x_dd_mag</th>
+<th>x_dd_ang</th>
+<th>x_dq_mag</th>
+<th>x_dq_ang</th>
+<th>x_qd_mag</th>
+<th>x_qd_ang</th>
+<th>x_qq_mag</th>
+<th>x_qq_ang</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><code>mag</code> means the magnitidue of a complex value. The unit is <span class="arithmatex">\([\mathrm{dB}]\)</span>.</li>
+<li><code>ang</code> means the phase angle of a complex value. The unit is <span class="arithmatex">\([\mathrm{degree}]\)</span>.</li>
+</ul>
+</div>
+<p>The user has the flexibility to obtain these files through various means, including computer simulations or actual measurements. For example, you can build the system in a <code>SISA</code>-supported simulation software and use the provided <code>Impedance Scan</code> feature of <code>SISA</code> to get them.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>All frequency scan files must have exactly the same frequency points.</p>
+</div>
+<h3 id="h-config-file">H Config File</h3>
+<p>After obtaining the impedance/admittance scan files of all the connection ports between subsystem <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>, you can construct <span class="arithmatex">\(H_a\)</span> and <span class="arithmatex">\(H_b\)</span> by appropriately positioning those <span class="arithmatex">\(\underline{Z}\)</span> and <span class="arithmatex">\(\underline{Y}\)</span> matrices into a larger matrix. You need to create two CSV file to config <span class="arithmatex">\(H_a\)</span> and <span class="arithmatex">\(H_b\)</span> matrices, respectively. The file names must be <code>ha_config.csv</code> and <code>hb_config.csv</code>.</p>
+<p>Suppose the <span class="arithmatex">\(\mathbf{H_a}\)</span> matrix is mathematically </p>
+<div class="arithmatex">\[
+\mathbf{H_a} = 
+\left[\begin{array}{cc}
+    \mathbf{Y}_{\mathrm{type3}} &amp; \mathbf{O} &amp; \mathbf{O} &amp; \mathbf{O} &amp; \mathbf{O} \\
+    \mathbf{O} &amp; \mathbf{Y}_{\mathrm{type4}} &amp; \mathbf{O} &amp; \mathbf{O} &amp; \mathbf{O} \\
+    \mathbf{O} &amp; \mathbf{O} &amp; \mathbf{Y}_{\mathrm{type4}} &amp; \mathbf{O} &amp; \mathbf{O} \\
+    \mathbf{O} &amp; \mathbf{O} &amp; \mathbf{O} &amp; \mathbf{Y}_{\mathrm{type4}} &amp; \mathbf{O} \\
+    \mathbf{O} &amp; \mathbf{O} &amp; \mathbf{O} &amp; \mathbf{O} &amp; \mathbf{Z}_{\mathrm{grid}} \\
+\end{array}\right]
+\]</div>
+<p>where </p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{Y}_{\mathrm{type3}}\)</span>, <span class="arithmatex">\(\mathbf{Y}_{\mathrm{type4}}\)</span>, and <span class="arithmatex">\(\mathbf{Z}_{\mathrm{grid}}\)</span> are <span class="arithmatex">\(2\times2\)</span> matrices. And you have already obtained the frequency scan files of them as in section <a href="#frequency-scan-file">Frequency Scan File</a>, and their file names are <code>Y_type3.csv</code>, <code>Y_type4.csv</code>, and <code>Z_grid.csv</code>, respectively.</li>
+<li><span class="arithmatex">\(\mathbf{O}\)</span> is a <span class="arithmatex">\(2\times2\)</span> null matrix. You don't need a frequency scan file for <span class="arithmatex">\(\mathbf{O}\)</span>.</li>
+</ul>
+<p>Then your <code>ha_config.csv</code> file content should be</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Y_type3,,,,
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>,Y_type4,,,
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>,,Y_type4,,
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>,,,Y_type4,
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>,,,,Z_grid
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The position of each null-matrix is empty.</p>
+</div>
+<h2 id="sisa-stability-analysis-page">SISA Stability Analysis Page</h2>
+<p>After preparing the <code>frequency-scan</code> files and <code>h-config</code> files, you are ready to use the SISA <code>Statbilty Analysis Page</code>, see <a href="#fig_stability_analysis_page">Figure 1</a>.</p>
+<p><figure id="fig_stability_analysis_page"><img alt="" src="../../fig/stability_analysis_page.png" width="800"><figcaption>Figure 1: SISA Stability Analysis Page. </figcaption></figure></p>
+<p>You need to follow 3 separate steps, one by one.</p>
+<ol>
+<li>Run without Adjust - Assess the stability of the system in its current state without applying any mitigation measures.</li>
+<li>Calculate Participation Factor - Analyse the most contributive component for an oscillation.</li>
+<li>Run with Adjust - Assess the stability of the system after applying the implemented impedance shaping method.</li>
+</ol>
+<h3 id="run-without-adjust">Run without Adjust</h3>
+<p>All the frequency scan (impedance/admittance) files and the h-config files (<code>ha_config.csv</code> and <code>hb_config.csv</code>) must be placed in the same folder as the <code>Input Folder</code>. You need to simply provide it by clicking the <code>Choose folder</code>, and then click the button of <code>Run without Adjust</code>.</p>
+<p>The frequency spectra of all eigen values (<span class="arithmatex">\(\Lambda\)</span>) of the tranfer function matrix <span class="arithmatex">\(\mathbf{H}\)</span>, where <span class="arithmatex">\(\mathbf{H} = \mathbf{H_a} \mathbf{H_b}\)</span>, are plotted with interactive figures in one HTML file. It will be opened automatically with your default browser (e.g. Google Chrome). These figures can help you to find out the oscillication frequency and which eigen value contributes the most.</p>
+<p>The default view of a figure contains two subplots: amplitude and phase angle, see <a href="#fig_sisa_find_oscillation_frequency">Figure 2</a> as an example. The frequency points are directly from the input frequency scan files. Each frequency has a blue dot. Since they are discrete values, the exact crossing frequency at the reference level (marked by an horitonal red line) is interpolated and indicated by a vertical line, and you can use the nearest blue dot on each side of the vertical line comparing with the reference line to determine the crossing direction. <a href="#fig_sisa_find_oscillation_frequency_zoomed_in">Figure 3</a> shows that somewhere after 26.5 Hz, the amplitude crosses from below to above, while the phase angle crosses from above to below. And the amplitude crosses at a smaller frequency that the phase angle. Therefore, you know the eigen value <span class="arithmatex">\(\Lambda9\)</span> contributes the most at the oscillation frequency near 26.5 Hz.</p>
+<p><figure id="fig_sisa_find_oscillation_frequency"><img alt="" src="../../fig/sisa_find_oscillation_frequency.png" width="800"><figcaption>Figure 2: Exemplary figure of an eigen value (default view). </figcaption></figure></p>
+<p><figure id="fig_sisa_find_oscillation_frequency_zoomed_in"><img alt="" src="../../fig/sisa_find_oscillation_frequency_zoomed_in.png" width="800"><figcaption>Figure 3: Exemplary figure of an eigen value (zoomed-in view around the oscillation frequency near 26.5 Hz). </figcaption></figure></p>
+<h3 id="calculate-participagion-factor">Calculate Participagion Factor</h3>
+<p>After visually identifying the most contributive eigen value and the oscillation frequency, you can calculate the participation factor.</p>
+<ul>
+<li>Decide which subsystem you want to adjust (<code>A</code> or <code>B</code>).</li>
+<li>
+<p>The index of the eigen value.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It should be an integer. Just use the number of the <span class="arithmatex">\(\Lambda\)</span> in the corresponding figure. E.g. use the number <code>9</code> for <span class="arithmatex">\(\Lambda9\)</span> for the example of <a href="#fig_sisa_find_oscillation_frequency_zoomed_in">Figure 3</a>.</p>
+</div>
+</li>
+<li>
+<p>The oscillation frequency.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since the frequency points are discrete, the exactly oscillation frequency is usually not available from the frequency scan files, you need to use the nearest available value. In the example of <a href="#fig_sisa_find_oscillation_frequency_zoomed_in">Figure 3</a>, you need to use 26.5 Hz.  </p>
+</div>
+</li>
+</ul>
+<p>Click the button <code>Calculate</code> will result in a new HTML file with a figure of participation factor, see <a href="#fig_sisa_plot_participation_factor">Figure 4</a> as an example.</p>
+<p><figure id="fig_sisa_plot_participation_factor"><img alt="" src="../../fig/sisa_plot_participation_factor.png" width="800"><figcaption>Figure 4: Exemplary figure of a participation factor. </figcaption></figure></p>
+<p>Here you can clearly see the <code>dd component</code> of <code>Port Number</code> <code>3</code> and <code>4</code> has the highest value, indicating that they both are the dominant contributors. You can shape them to damp the oscillation most effectively. Suppose you want to choose port number <code>3</code> for the next step.</p>
+<h3 id="run-with-adjust">Run with Adjust</h3>
+<p>After identifying the component to adjust by the participation factor figure, you can proceed with finding a proper adjudtment to damp the oscillation using the following input.</p>
+<ul>
+<li>
+<p>The index of the port, which is the Port Number in <a href="#fig_sisa_plot_participation_factor">Figure 4</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It should be an integer. E.g. use the number <code>3</code> from the example of <a href="#fig_sisa_plot_participation_factor">Figure 4</a>.</p>
+</div>
+</li>
+<li>
+<p>The axis: <code>d</code> or <code>q</code>. Based on the example of <a href="#fig_sisa_plot_participation_factor">Figure 4</a>, you choose <code>d</code>.</p>
+</li>
+<li>Delta phase angle - This is the increment of phase margin <span class="arithmatex">\(\Delta \mathrm{PM}\)</span> in equation (26) in [<sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup>]. </li>
+<li>
+<p>Quality factor ratio - This is the ratio to calculate the quality factor.</p>
+<div class="arithmatex">\[
+    \omega_i = \mathrm{ratio} \times 2\pi f_c
+\]</div>
+<p>where <span class="arithmatex">\(f_c\)</span> is the oscillation frequency, and <span class="arithmatex">\(\omega_i\)</span> is the quality factor from equation (28) in [<sup id="fnref4:1"><a class="footnote-ref" href="#fn:1">1</a></sup>].</p>
+</li>
+</ul>
+<p>Click the button <code>Run with Adjust</code> will result in two HTML files.</p>
+<ul>
+<li>
+<p>Frequency reponse of the shaping function shown in equation (28) in [<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>].</p>
+<p><figure id="fig_sisa_plot_shaping_ha"><img alt="" src="../../fig/sisa_plot_shaping_ha.png" width="800"><figcaption>Figure 5: Exemplary figure of the frequency response of the shaping function. </figcaption></figure></p>
+</li>
+<li>
+<p>Frequency spectra of all the eigen values (<span class="arithmatex">\(\Lambda\)</span>) of the adjusted transfer function <span class="arithmatex">\(\mathbf{H}\)</span>.</p>
+<p><figure id="fig_sisa_oscillation_frequency_adjusted"><img alt="" src="../../fig/sisa_oscillation_frequency_adjusted.png" width="800"><figcaption>Figure 6: Exemplary figure of an eigen value of the adjust transfer function. </figcaption></figure></p>
+</li>
+</ul>
+<p><a href="#fig_sisa_oscillation_frequency_adjusted">Figure 6</a> shows that the crossing frequency of the amplitude becomes larger than the crossing of frequency of the phase angle, comparing to <a href="#fig_sisa_find_oscillation_frequency">Figure 2</a>. This is the effect of the adjustment.</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Dongsheng Yang and Yin Sun. Siso impedance-based stability analysis for system-level small-signal stability assessment of large-scale power electronics-dominated power systems. <em>IEEE Transactions on Sustainable Energy</em>, 13(1):537–550, 2022. <a href="https://doi.org/10.1109/TSTE.2021.3119207">doi:10.1109/TSTE.2021.3119207</a>. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2021-2023 EnergyNode B.V.
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/EnergyNode/sisa_public" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
