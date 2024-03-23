@@ -57,7 +57,15 @@ markdown_extensions:
   - attr_list
   - md_in_html
 
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/EnergyNode/sisa_public
+
 extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+copyright: |
+  &copy; 2021-2023 EnergyNode B.V.
