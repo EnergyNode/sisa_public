@@ -1,0 +1,57 @@
+# Compiled source #
+###################
+*.egg-info
+
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+
+
+# IDE generated files #
+#######################
+.idea
+.vscode
+__pycache__
+
+
+# Test generated files #
+#######################
+.coverage
+.pytest_cache
+.mypy_cache
+
+
+# Virtual Environment #
+#######################
+env_*
+venv
+
+
+# Source data #
+#######################
+*.xlsx
+*.db
+
+
+# Generated Results #
+######################
+output
+
+# PSCAD Library #
+#################
+automation
+
+
+# Build #
+##########
+build
+dist
+
+# Temps #
+##########
+*.bkp
+*.dtmp
+temps/

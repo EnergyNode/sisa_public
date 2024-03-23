@@ -1,4 +1,4 @@
-To use `SISA`, you have to agree with our license.
+To use `SISA`, you have to agree with our [license](../license.md).
 
 Visit our [release page](https://github.com/EnergyNode/sisa_public/releases) to download the app, as well as examples. It is always recommended to download the latest release.
 

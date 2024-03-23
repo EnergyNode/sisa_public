@@ -2,8 +2,8 @@ site_name: SISA Knowledge Base
 docs_dir: docs
 nav:
   - Home: index.md
+  - License: license.md
   - How to Use:
-      - License: how_to_use/license.md
       - Download: how_to_use/download.md
       - Impedance Scan: how_to_use/impedance_scan.md
       - Stability Analysis: how_to_use/stability_analysis.md
